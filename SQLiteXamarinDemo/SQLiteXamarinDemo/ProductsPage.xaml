@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteXamarinDemo.ProductsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ProductsView"
+            ItemsSource="{Binding Path=Products}"
+            ListView.RowHeight="150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Entry x:Name="Id" Text="{Binding Id}" />
+                                <Entry x:Name="ProductName" Text="{Binding ProductName}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add" Clicked="OnAddClick"/>
+            <Button Text="Save" Clicked="OnSaveClick"/>
+            <Button Text="Save All" Clicked="OnSaveAllClick"/>
+            <Button Text="Delete" Clicked="OnRemoveClick"/>
+            <Button Text="Delete All" Clicked="OnRemoveAllClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
